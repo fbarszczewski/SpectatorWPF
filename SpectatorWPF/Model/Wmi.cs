@@ -17,9 +17,7 @@ namespace SpectatorWPF.Model
             try
             {
                 foreach (var queryObj in new ManagementObjectSearcher(fromNamespace, $"SELECT {property} FROM {fromClass}").Get())
-                {
                     propertyValue = queryObj[property].ToString();
-                }
 
             }
             catch (ManagementException e)
@@ -28,32 +26,25 @@ namespace SpectatorWPF.Model
             }
 
             return propertyValue;
-
         }
         public static List<string> GetValues(string fromNamespace, string fromClass, string[] properties)
         {
             List<string> returnValues = new List<string>();
 
 
-            foreach (var queryObj in new ManagementObjectSearcher(fromNamespace, $"SELECT {string.Join(", ", properties)} FROM {fromClass}").Get())
+
+            try
             {
-                foreach (var property in properties)
+                foreach (var queryObj in new ManagementObjectSearcher(fromNamespace, $"SELECT {string.Join(", ", properties)} FROM {fromClass}").Get())
                 {
-                    try
-                    {
-
-                        returnValues.Add(queryObj[property].ToString());
-
-                    }
-                    catch (ManagementException e)
-                    {
-
-                        returnValues.Add(e.Message);
-                    }
+                    foreach (var property in properties)
+                            returnValues.Add(queryObj[property].ToString()!);
                 }
             }
-
-
+            catch (ManagementException e)
+            {
+                returnValues.Add(e.Message);
+            }
 
 
             return returnValues;
