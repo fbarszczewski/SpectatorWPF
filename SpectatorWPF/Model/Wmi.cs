@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Management;
-using System.Net.Http.Headers;
-using System.Windows.Documents;
 
 namespace SpectatorWPF.Model
 {
@@ -10,7 +8,13 @@ namespace SpectatorWPF.Model
 
 
 
-
+        /// <summary>
+        /// Searches for value in WMI
+        /// </summary>
+        /// <param name="fromNamespace"> WMI namespace</param>
+        /// <param name="fromClass">WMI class</param>
+        /// <param name="property">WMI property</param>
+        /// <returns>string value for given property</returns>
         public static string GetValue(string fromNamespace, string fromClass, string  property )
         {
             var propertyValue = "";
@@ -27,11 +31,16 @@ namespace SpectatorWPF.Model
 
             return propertyValue;
         }
+        /// <summary>
+        /// Searches for values in WMI
+        /// </summary>
+        /// <param name="fromNamespace">WMI class</param>
+        /// <param name="fromClass">WMI class</param>
+        /// <param name="properties">WMI property</param>
+        /// <returns>List of string for given properties in properties order</returns>
         public static List<string> GetValues(string fromNamespace, string fromClass, string[] properties)
         {
             List<string> returnValues = new List<string>();
-
-
 
             try
             {
@@ -43,7 +52,15 @@ namespace SpectatorWPF.Model
             }
             catch (ManagementException e)
             {
-                returnValues.Add(e.Message);
+                if (e.Message == "Invalid query ")
+                {
+                    foreach (var property in properties)
+                    {
+                        returnValues.Add(GetValue(fromNamespace, fromClass, property));
+                    }
+                }
+                else
+                    returnValues.Add(e.Message);
             }
 
 
