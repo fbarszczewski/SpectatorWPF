@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -87,6 +88,20 @@ namespace SpectatorWPF.Tests
             //Assert
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void GetRam_ShouldHaveMoreThanOneMemory()
+        {
+            //Arrange
+
+            //Act
+            List<Memory> actual = Wmi.GetRam();
+
+            //Assert
+            Assert.True(actual.Count > 1);
+
+        }
+
 
 
     }

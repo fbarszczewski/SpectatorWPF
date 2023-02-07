@@ -25,14 +25,17 @@ namespace SpectatorWPF
         {
             InitializeComponent();
 
-            List<string> list = Wmi.GetValues("root\\CIMV2", "Win32_Processor", new string[] { "Caption", "Names", "NumberOfCores" });
+            List<string> list = Wmi.GetValues("root\\CIMV2", "Win32_PhysicalMemory", new string[] { "Manufacturer" });
+
+            foreach (var item in list)
+            {
+                MessageBox.Show(item);
+            }
 
 
-            Processor processor = new Processor();
 
+           // MessageBox.Show(Wmi.GetValue("root\\CIMV2", "Win32_PhysicalMemory", "Manufacturer"));
 
-            MessageBox.Show($"{processor.Name} {processor.Architecture} {processor.NumberOfCores} {processor.CurrentClockSpeed} {processor.L2CacheSize} {processor.L3CacheSize}");
-            //MessageBox.Show(Wmi.GetValue("root\\CIMV2", "Win32_Processor", "Names"));
 
         }
     }

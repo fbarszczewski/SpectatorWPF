@@ -94,7 +94,7 @@ namespace SpectatorWPF.Model
                     memorySlots.Add(memory);
                 }
             }
-            catch (ManagementException e)
+            catch (ManagementException )
             {
                 var memory = new Memory();
                 memory.PartNumber = "No data";

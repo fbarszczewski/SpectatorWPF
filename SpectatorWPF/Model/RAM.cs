@@ -13,7 +13,7 @@ namespace SpectatorWPF.Model
 
         public RAM()
         {
-            //MemorySlots = AskManagement.GetRam();
+            MemorySlots = Wmi.GetRam();
         }
     }
 
@@ -26,5 +26,12 @@ namespace SpectatorWPF.Model
         public ushort Size { get; set; }
         public uint ClockSpeed { get; set; }
         public uint Voltage { get; set; }
+        public Memory()
+        {
+            PartNumber = "Unknown";
+            Manufacturer = "Unknown";
+            Serial = "Unknown";
+            Location = "";
+        }
     }
 }
