@@ -63,8 +63,14 @@ namespace SpectatorWPF.Model
                     returnValues.Add(e.Message);
             }
 
+            if (returnValues.Count > 0)
+                return returnValues;
+            else
+            {
+                returnValues.Add("");
 
-            return returnValues;
+                return returnValues;
+            }
         }
 
 
