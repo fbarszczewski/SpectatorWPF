@@ -1,18 +1,17 @@
-﻿using System.Management;
+﻿using System.Collections.Generic;
+using System.Management;
+using System.Net.Http.Headers;
+using System.Windows.Documents;
 
 namespace SpectatorWPF.Model
 {
-    internal class Wmi
+    public static class Wmi
     {
-        private  ManagementObjectSearcher _searcher;
-
-        public Wmi()
-        {
-            _searcher = new ManagementObjectSearcher();
-        }
 
 
-        public string GetValue(string fromNamespace, string fromClass, string  property )
+
+
+        public static string GetValue(string fromNamespace, string fromClass, string  property )
         {
             var propertyValue = "";
             try
@@ -31,6 +30,35 @@ namespace SpectatorWPF.Model
             return propertyValue;
 
         }
-        // _searcher = new ManagementObjectSearcher("root\\WMI", "SELECT * FROM MSWmi_PnPInstanceNames");
+        public static List<string> GetValues(string fromNamespace, string fromClass, string[] properties)
+        {
+            List<string> returnValues = new List<string>();
+
+
+            foreach (var queryObj in new ManagementObjectSearcher(fromNamespace, $"SELECT {string.Join(", ", properties)} FROM {fromClass}").Get())
+            {
+                foreach (var property in properties)
+                {
+                    try
+                    {
+
+                        returnValues.Add(queryObj[property].ToString());
+
+                    }
+                    catch (ManagementException e)
+                    {
+
+                        returnValues.Add(e.Message);
+                    }
+                }
+            }
+
+
+
+
+            return returnValues;
+        }
+
+
     }
 }
