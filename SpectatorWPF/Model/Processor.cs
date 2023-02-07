@@ -16,10 +16,7 @@ namespace SpectatorWPF.Model
 			get { return _name!; }
             private set 
             { 
-                if (value == null)
-                    _name = "No data";
-                else
-                    _name = value;
+                _name = value;
             }
 		}
 
