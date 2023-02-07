@@ -5,8 +5,61 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SpectatorWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" 
+        Height="600" Width="800"
+        WindowStartupLocation="CenterScreen" 
+        WindowStyle="None" 
+        AllowsTransparency="true"
+        Background="Transparent"
+        ResizeMode="NoResize">
 
-    </Grid>
+    
+    
+    
+    <Border Background="#272635"
+            CornerRadius="20" BorderBrush="#FF181721" BorderThickness="2">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Spectator"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Left"
+                       FontSize="45"
+                       Foreground="#A1E44D" 
+                       FontFamily="Gill Sans MT" 
+                       Margin="11,7,0,0" FontWeight="Bold" FontStyle="Italic"/>
+
+
+            <StackPanel Grid.Row="1" Grid.Column="0"
+                        Margin="0,10,0,0">
+
+
+                <RadioButton Content="Device info"
+                             IsChecked="True"
+                             Style="{StaticResource MenuButtonTheme}" FontFamily="Bahnschrift"/>
+
+                <RadioButton Content="Processor"
+                             Style="{StaticResource MenuButtonTheme}"/>
+
+                <RadioButton Content="Memory"
+                             Style="{StaticResource MenuButtonTheme}"/>
+
+                <RadioButton Content="Storage"
+                             Style="{StaticResource MenuButtonTheme}"/>
+
+            </StackPanel>
+
+
+        </Grid>
+    </Border>
 </Window>
