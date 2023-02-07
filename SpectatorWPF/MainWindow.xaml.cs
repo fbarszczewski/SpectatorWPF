@@ -28,6 +28,7 @@ namespace SpectatorWPF
             List<string> list = Wmi.GetValues("root\\CIMV2", "Win32_Processor", new string[] { "Caption", "Names", "NumberOfCores" });
 
             MessageBox.Show(string.Join(", ", list));
+            //MessageBox.Show(Wmi.GetValue("root\\CIMV2", "Win32_Processor", "Names"));
 
         }
     }
