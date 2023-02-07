@@ -72,7 +72,10 @@ namespace SpectatorWPF.Model
                 return returnValues;
             }
         }
-
+        /// <summary>
+        /// Search in WMI for RAM info
+        /// </summary>
+        /// <returns></returns>
         public static List<Memory> GetRam()
         {
             var memorySlots = new List<Memory>();

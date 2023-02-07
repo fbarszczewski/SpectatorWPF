@@ -20,9 +20,9 @@ namespace SpectatorWPF.Model
             }
 		}
 
-		public string Architecture { get;private set; }
-        public string NumberOfCores { get;private set; }
-        public string CurrentClockSpeed { get;private set; }
+        public string Architecture { get; private set; }
+        public string NumberOfCores { get; private set; }
+        public string CurrentClockSpeed { get; private set; }
         public string L2CacheSize { get; private set; }
         public string L3CacheSize { get; private set; }
 
