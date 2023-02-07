@@ -87,6 +87,8 @@ namespace SpectatorWPF.Tests
             //Assert
             Assert.Equal(expected, actual);
         }
+
+
     }
 
 

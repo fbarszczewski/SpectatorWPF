@@ -73,6 +73,39 @@ namespace SpectatorWPF.Model
             }
         }
 
+        public static List<Memory> GetRam()
+        {
+            var memorySlots = new List<Memory>();
+
+            try
+            {
+                foreach (var queryObj in new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PhysicalMemory").Get())
+                {
+                    var memory = new Memory();
+
+                    memory.Manufacturer = (string)queryObj["Manufacturer"];
+                    memory.PartNumber = (string)queryObj["PartNumber"];
+                    memory.Serial = (string)queryObj["SerialNumber"];
+                    memory.Location = (string)queryObj["DeviceLocator"];
+                    memory.Size = (ushort)((ulong)queryObj["Capacity"] / (1024 * 1024 * 1024));
+                    memory.ClockSpeed = (uint)queryObj["ConfiguredClockSpeed"];
+                    memory.Voltage = (uint)queryObj["ConfiguredVoltage"];
+
+                    memorySlots.Add(memory);
+                }
+            }
+            catch (ManagementException e)
+            {
+                var memory = new Memory();
+                memory.PartNumber = "No data";
+                memory.Size = 0;
+                memorySlots.Add(memory);
+            }
+
+
+            return memorySlots;
+        }
+
 
     }
 }
