@@ -66,7 +66,7 @@ namespace SpectatorWPF.Model
             {
                 if (returnValues.Count != properties.Count())
                 {
-                    for (int i = 0; i <= properties.Length; i++)
+                    for (int i = 0; i < properties.Length; i++)
                     {
                         returnValues.Add("error");
                     }
