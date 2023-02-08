@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Management;
 
 namespace SpectatorWPF.Model
@@ -59,18 +60,20 @@ namespace SpectatorWPF.Model
                         returnValues.Add(GetValue(fromNamespace, fromClass, property));
                     }
                 }
-                else
-                    returnValues.Add(e.Message);
-            }
 
-            if (returnValues.Count > 0)
-                return returnValues;
-            else
+            }
+            finally
             {
-                returnValues.Add("");
-
-                return returnValues;
+                if (returnValues.Count != properties.Count())
+                {
+                    for (int i = 0; i <= properties.Length; i++)
+                    {
+                        returnValues.Add("error");
+                    }
+                }
             }
+
+            return returnValues;
         }
         /// <summary>
         /// Search in WMI for RAM info

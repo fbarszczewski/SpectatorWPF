@@ -5,8 +5,151 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SpectatorWPF.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+             d:DesignHeight="506" d:DesignWidth="556">
+    <Border Margin="10"
+            CornerRadius="20" 
+            Background="#FF232231">
+
+
+
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" 
+                                Margin="5"
+                                Padding="5"
+                                Background="#FF2B2A3C"
+                                CornerRadius="10">
+                <StackPanel>
+                    <TextBlock Text="Manufacturer:"
+                               Style="{StaticResource PropertyNameTheme}" />
+
+                    <TextBlock Text="{Binding }"
+                               Style="{StaticResource PropertyValueTheme}"/>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="1" 
+                    Margin="5"
+                    Padding="5"
+                    Background="#FF2B2A3C"
+                    CornerRadius="10">
+                <StackPanel>
+                    <TextBlock Text="Model:"
+                               Style="{StaticResource PropertyNameTheme}"/>
+
+                    <TextBlock Text="{Binding }"
+                               Style="{StaticResource PropertyValueTheme}"/>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="2" 
+                    Margin="5"
+                    Padding="5"
+                    Background="#FF2B2A3C"
+                    CornerRadius="10">
+
+                <StackPanel>
+                    <TextBlock Text="Description:"
+                               Style="{StaticResource PropertyNameTheme}"/>
+                    <TextBlock Text="{Binding }"
+                               Style="{StaticResource PropertyValueTheme}"/>
+                </StackPanel>
+            </Border>
+
+            <StackPanel Orientation="Horizontal"
+                        Grid.Row="3" HorizontalAlignment="Center">
+
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="Margin" Value="15,5,15,0"/>
+                    </Style>
+                </StackPanel.Resources>
+
+                
+                <Border  
+                    Padding="5"
+                    Width="75"
+                    Background="#FF2B2A3C"
+                    CornerRadius="10">
+
+                    <StackPanel>
+                        <TextBlock Text="Arch.:"
+                               Style="{StaticResource PropertyNameTheme}"/>
+                        <TextBlock Text="{Binding }"
+                               Style="{StaticResource PropertyValueTheme}"/>
+                    </StackPanel>
+
+                </Border>
+
+                <Border  
+                    Padding="5"
+                    Width="75"
+                    Background="#FF2B2A3C"
+                    CornerRadius="10">
+
+                    <StackPanel>
+                        <TextBlock Text="Cores:"
+                               Style="{StaticResource PropertyNameTheme}" FontSize="14"/>
+                        <TextBlock Text="{Binding }"
+                               Style="{StaticResource PropertyValueTheme}"/>
+                    </StackPanel>
+
+                </Border>
+                <Border  
+                    Padding="5"
+                    Width="75"
+                    Background="#FF2B2A3C"
+                    CornerRadius="10">
+
+                    <StackPanel>
+                        <TextBlock Text="Speed:"
+                               Style="{StaticResource PropertyNameTheme}" FontSize="14"/>
+                        <TextBlock Text="{Binding }"
+                               Style="{StaticResource PropertyValueTheme}"/>
+                    </StackPanel>
+
+                </Border>
+                <Border  
+                    Padding="5"
+                    Width="75"
+                    Background="#FF2B2A3C"
+                    CornerRadius="10">
+
+                    <StackPanel>
+                        <TextBlock Text="L2 Catche:"
+                               Style="{StaticResource PropertyNameTheme}" FontSize="14"/>
+                        <TextBlock Text="{Binding }"
+                               Style="{StaticResource PropertyValueTheme}"/>
+                    </StackPanel>
+
+                </Border>
+
+                <Border  
+                    Padding="5"
+                    Width="75"
+                    Background="#FF2B2A3C"
+                    CornerRadius="10">
+
+                    <StackPanel>
+                        <TextBlock Text="L3 Catche:"
+                               Style="{StaticResource PropertyNameTheme}" FontSize="14"/>
+                        <TextBlock Text="{Binding }"
+                               Style="{StaticResource PropertyValueTheme}"/>
+                    </StackPanel>
+
+                </Border>
+            </StackPanel>
+
+
+
+        </Grid>
+    </Border>
 </UserControl>
