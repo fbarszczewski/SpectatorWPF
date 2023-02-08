@@ -49,10 +49,12 @@
 
                 <RadioButton Content="Device info"
                              IsChecked="True"
-                             Style="{StaticResource MenuButtonTheme}" FontFamily="Bahnschrift"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding DeviceViewCommand}"/>
 
                 <RadioButton Content="Processor"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding ProcessorViewCommand}"/>
 
                 <RadioButton Content="Memory"
                              Style="{StaticResource MenuButtonTheme}"/>

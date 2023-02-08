@@ -9,6 +9,10 @@ namespace SpectatorWPF.ViewModel
 {
     class MainViewModel : ObservableObject
     {
+
+        public RelayCommand DeviceViewCommand { get; set; }
+        public RelayCommand ProcessorViewCommand { get; set; }
+
         private object _currentView;
         public object CurrentView
         {
@@ -20,11 +24,27 @@ namespace SpectatorWPF.ViewModel
             }
         }
         public DeviceViewModel DeviceVM { get; set; }
+        public ProcessorViewModel CpuVM { get; set; }
 
         public MainViewModel()
         {
             DeviceVM = new DeviceViewModel();
+            CpuVM = new ProcessorViewModel();
             CurrentView = DeviceVM;
+
+            DeviceViewCommand = new RelayCommand(o =>
+            { 
+                CurrentView= DeviceVM;
+            });
+
+            ProcessorViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = CpuVM;
+            });
         }
+
+
+
+
     }
 }
