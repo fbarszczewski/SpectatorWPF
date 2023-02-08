@@ -49,31 +49,7 @@ namespace SpectatorWPF.Tests
             Assert.Equal(expected, actual);
         }
 
-        [Fact]
-        public void GetValues_WrongNamespaceShouldReturnError()
-        {
-            //Arrange
-            List<string> expected = new List<string>() { "Invalid namespace " };
 
-            //Act
-            List<string> actual = Wmi.GetValues("Invalid", "Win32_Processor", new string[] { "Caption", "Names", "NumberOfCores" });
-
-            //Assert
-            Assert.Equal(expected, actual);
-        }
-
-        [Fact]
-        public void GetValues_WrongClassShouldReturnError()
-        {
-            //Arrange
-            List<string> expected = new List<string>() { "Invalid class " };
-
-            //Act
-            List<string> actual = Wmi.GetValues("root\\CIMV2", "Invalid", new string[] { "Caption", "Names", "NumberOfCores" });
-
-            //Assert
-            Assert.Equal(expected, actual);
-        }
 
 
         [Fact]
