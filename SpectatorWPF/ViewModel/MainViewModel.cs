@@ -7,7 +7,7 @@ using SpectatorWPF.Core;
 
 namespace SpectatorWPF.ViewModel
 {
-    class MainViewModel :ObservableObject
+    class MainViewModel : ObservableObject
     {
         private object _currentView;
         public object CurrentView
