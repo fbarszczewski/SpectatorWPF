@@ -6,7 +6,8 @@
            x:Key="PropertyValueTheme">
         <Style.Setters>
             <Setter Property="FontSize" Value="18"/>
-            <Setter Property="Foreground" Value="#FF7C88A2"/>
+            <Setter Property="Foreground" Value="#D0CFEC"/>
+            <Setter Property="Margin" Value="0,10,0,0"/>
         </Style.Setters>
 
     </Style>

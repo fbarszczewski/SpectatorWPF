@@ -5,7 +5,8 @@
            x:Key="PropertyNameTheme">
         <Style.Setters>
             <Setter Property="FontSize" Value="14"/>
-            <Setter Property="Foreground" Value="#FD1B1F27"/>
+            <Setter Property="Foreground" Value="#FD62708C"/>
+
         </Style.Setters>
         
         

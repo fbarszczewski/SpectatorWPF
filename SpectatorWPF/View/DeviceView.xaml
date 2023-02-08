@@ -6,77 +6,77 @@
              xmlns:local="clr-namespace:SpectatorWPF.View"
              mc:Ignorable="d" 
              d:DesignHeight="506" d:DesignWidth="556">
-    <Border >
+    <Border Margin="10"
+            CornerRadius="20" 
+            Background="#FF232231">
 
-        <Grid>
+        <Grid Margin="10">
             <Grid.RowDefinitions>
-                <RowDefinition Height="60"/>
-                <RowDefinition />
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-
-                <Border Grid.Column="0"
-                        Margin="10"
-                        CornerRadius="20" 
-                        Background="#FF343C4E">
-
-                    <Grid Margin="10">
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-
-                        <Border Grid.Row="0" 
+            <Border Grid.Row="0" 
                                 Margin="5"
                                 Padding="5"
-                                Background="#FF3A445A"
+                                Background="#FF2B2A3C"
                                 CornerRadius="10">
-                            <StackPanel>
-                                <TextBlock Text="Model:"
-                                           Style="{StaticResource PropertyNameTheme}"/>
-                                <TextBlock Text="Model Name"
+                <StackPanel>
+                    <TextBlock Text="Manufacturer:"
+                                           Style="{StaticResource PropertyNameTheme}" />
+                    <TextBlock Text="Model Name"
                                            Style="{StaticResource PropertyValueTheme}"/>
-                            </StackPanel>
-                        </Border>
+                </StackPanel>
+            </Border>
 
-
-                        <Border Grid.Row="1" 
+            <Border Grid.Row="1" 
                                 Margin="5"
                                 Padding="5"
-                                Background="#FF3A445A"
+                                Background="#FF2B2A3C"
                                 CornerRadius="10">
-                            <StackPanel>
-                                <TextBlock Text="Model:"
+                <StackPanel>
+                    <TextBlock Text="Model:"
                                            Style="{StaticResource PropertyNameTheme}"/>
-                                <TextBlock Text="Model Name"
+                    <TextBlock Text="Model Name"
                                            Style="{StaticResource PropertyValueTheme}"/>
-                            </StackPanel>
-                        </Border>
+                </StackPanel>
+            </Border>
 
-                    </Grid>
-                    
-                    
 
-                    
-                </Border>
 
-                <Border Grid.Column="1"
-                        Margin="10"
-                        CornerRadius="20"
-                        Background="#FF343C4E">
 
-                </Border>
+            <Border Grid.Row="2" 
+                                Margin="5"
+                                Padding="5"
+                                Background="#FF2B2A3C"
+                                CornerRadius="10">
+                <StackPanel>
+                    <TextBlock Text="Part Number:"
+                                           Style="{StaticResource PropertyNameTheme}"/>
+                    <TextBlock Text="Model Name"
+                                           Style="{StaticResource PropertyValueTheme}"/>
+                </StackPanel>
+            </Border>
 
-            </Grid>
+
+
+
+            <Border Grid.Row="3" 
+                                Margin="5"
+                                Padding="5"
+                                Background="#FF2B2A3C"
+                                CornerRadius="10">
+                <StackPanel>
+                    <TextBlock Text="Serial Number:"
+                                           Style="{StaticResource PropertyNameTheme}"/>
+                    <TextBlock Text="Model Name"
+                                           Style="{StaticResource PropertyValueTheme}"/>
+                </StackPanel>
+            </Border>
 
         </Grid>
     </Border>

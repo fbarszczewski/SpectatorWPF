@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SpectatorWPF"
+        xmlns:viewModel="clr-namespace:SpectatorWPF.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" 
         Height="600" Width="800"
@@ -13,7 +14,9 @@
         Background="Transparent"
         ResizeMode="NoResize">
 
-    
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
     
     
     <Border Background="#272635"
@@ -61,7 +64,8 @@
 
             <ContentControl Grid.Row="1"
                             Grid.Column="1"
-                            Margin="10"/>
+                            Margin="10"
+                            Content="{Binding CurrentView}"/>
 
 
         </Grid>

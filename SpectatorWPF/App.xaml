@@ -2,6 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:SpectatorWPF"
+             xmlns:view="clr-namespace:SpectatorWPF.View"
+             xmlns:viewModel="clr-namespace:SpectatorWPF.ViewModel"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
 
@@ -12,7 +14,13 @@
                 <ResourceDictionary Source="Themes/PropertyNameTheme.xaml"/>
                 <ResourceDictionary Source="Themes/PropertyValueTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:DeviceViewModel}">
+                <view:DeviceView/>
+            </DataTemplate>
+
         </ResourceDictionary>
+
 
 
     </Application.Resources>
