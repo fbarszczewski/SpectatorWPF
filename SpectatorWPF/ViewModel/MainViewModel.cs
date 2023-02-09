@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SpectatorWPF.Core;
+using SpectatorWPF.Model;
 
 namespace SpectatorWPF.ViewModel
 {
@@ -27,6 +28,8 @@ namespace SpectatorWPF.ViewModel
         }
         public DeviceViewModel DeviceVM { get; set; }
         public ProcessorViewModel CpuVM { get; set; }
+
+        public RamViewModel RamVM { get; set; }
         public string TestProperty 
         {
             get => testProperty; 
@@ -44,7 +47,8 @@ namespace SpectatorWPF.ViewModel
             TestProperty = "test";
             DeviceVM = new DeviceViewModel();
             CpuVM = new ProcessorViewModel();
-            CurrentView = CpuVM;
+            RamVM = new RamViewModel();
+            CurrentView = RamVM;
 
             DeviceViewCommand = new RelayCommand(o =>
             {

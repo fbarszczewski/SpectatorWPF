@@ -23,6 +23,10 @@
                 <view:ProcessorView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewModel:RamViewModel}">
+                <view:RamView/>
+            </DataTemplate>
+
         </ResourceDictionary>
 
 
