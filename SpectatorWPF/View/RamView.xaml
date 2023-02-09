@@ -5,12 +5,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SpectatorWPF.View"
              xmlns:vm="clr-namespace:SpectatorWPF.ViewModel"
+             xmlns:core="clr-namespace:SpectatorWPF.Core"
              mc:Ignorable="d" 
              d:DesignHeight="506" d:DesignWidth="556">
+    
 
     <Border Margin="10"
             CornerRadius="20" 
             Background="#FF232231">
+        <Border.Resources>
+            <core:IntToStringConventer x:Key="ToString"/>
+        </Border.Resources>
         <Border.DataContext>
             <vm:RamViewModel/>
         </Border.DataContext>
@@ -86,7 +91,7 @@
                             <StackPanel>
                                 <TextBlock Text="Size:"
                                            Style="{StaticResource PropertyNameTheme}" FontSize="12"/>
-                                <TextBlock Text="{Binding Size0}"
+                                <TextBlock Text="{Binding Size0, Converter={StaticResource ToString}}"
                                            Style="{StaticResource PropertyValueTheme}"/>
                             </StackPanel>
                         </Border>

@@ -11,24 +11,26 @@ namespace SpectatorWPF.Core
     public class RelayCommand:ICommand
     {
         #region Fields
-        readonly Action<object> _execute;
-        readonly Predicate<object> _canExecute;
+        readonly Action<object?> _execute;
+        readonly Predicate<object?> _canExecute;
         #endregion // Fields
         #region Constructor
-        public RelayCommand(Action<object> execute, Predicate<object> canExecute = null)
+
+        public RelayCommand(Action<object?> execute, Predicate<object?> canExecute = null)
         {
             if (execute == null) throw new ArgumentNullException("execute");
             _execute = execute;
             _canExecute = canExecute;
         }
         #endregion // Constructor
-
         #region ICommand Members
         [DebuggerStepThrough]
-        public bool CanExecute(object parameter)
+
+        public bool CanExecute(object? parameter)
         {
             return _canExecute == null ? true : _canExecute(parameter);
         }
+
         public event EventHandler CanExecuteChanged
         {
             add
@@ -41,7 +43,7 @@ namespace SpectatorWPF.Core
             }
 
         }
-        public void Execute(object parameter)
+        public void Execute(object? parameter)
         {
             _execute(parameter);
         }
