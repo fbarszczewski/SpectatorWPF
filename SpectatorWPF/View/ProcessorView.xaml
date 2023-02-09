@@ -4,12 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SpectatorWPF.View"
+             xmlns:vm="clr-namespace:SpectatorWPF.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="506" d:DesignWidth="556">
     <Border Margin="10"
             CornerRadius="20" 
             Background="#FF232231">
-
+        <Border.DataContext>
+            <vm:ProcessorViewModel/>
+        </Border.DataContext>
 
 
         <Grid Margin="10">
@@ -31,7 +34,7 @@
                     <TextBlock Text="Manufacturer:"
                                Style="{StaticResource PropertyNameTheme}" />
 
-                    <TextBlock Text="{Binding }"
+                    <TextBlock Text="{Binding Manufacturer}"
                                Style="{StaticResource PropertyValueTheme}"/>
                 </StackPanel>
             </Border>
@@ -45,7 +48,7 @@
                     <TextBlock Text="Model:"
                                Style="{StaticResource PropertyNameTheme}"/>
 
-                    <TextBlock Text="{Binding }"
+                    <TextBlock Text="{Binding Model}"
                                Style="{StaticResource PropertyValueTheme}"/>
                 </StackPanel>
             </Border>
@@ -59,7 +62,7 @@
                 <StackPanel>
                     <TextBlock Text="Description:"
                                Style="{StaticResource PropertyNameTheme}"/>
-                    <TextBlock Text="{Binding }"
+                    <TextBlock Text="{Binding Description}"
                                Style="{StaticResource PropertyValueTheme}"/>
                 </StackPanel>
             </Border>
@@ -69,7 +72,7 @@
 
                 <StackPanel.Resources>
                     <Style TargetType="{x:Type Border}">
-                        <Setter Property="Margin" Value="15,5,15,0"/>
+                        <Setter Property="Margin" Value="13,5,12,0"/>
                     </Style>
                 </StackPanel.Resources>
 
@@ -82,8 +85,8 @@
 
                     <StackPanel>
                         <TextBlock Text="Arch.:"
-                               Style="{StaticResource PropertyNameTheme}"/>
-                        <TextBlock Text="{Binding }"
+                               Style="{StaticResource PropertyNameTheme}" FontSize="12"/>
+                        <TextBlock Text="{Binding Architecture}"
                                Style="{StaticResource PropertyValueTheme}"/>
                     </StackPanel>
 
@@ -91,42 +94,46 @@
 
                 <Border  
                     Padding="5"
-                    Width="75"
+                    Width="90"
                     Background="#FF2B2A3C"
                     CornerRadius="10">
 
                     <StackPanel>
                         <TextBlock Text="Cores:"
-                               Style="{StaticResource PropertyNameTheme}" FontSize="14"/>
-                        <TextBlock Text="{Binding }"
+                               Style="{StaticResource PropertyNameTheme}" FontSize="12"/>
+                        <TextBlock Text="{Binding Cores}"
                                Style="{StaticResource PropertyValueTheme}"/>
+
+                        
                     </StackPanel>
 
                 </Border>
                 <Border  
                     Padding="5"
-                    Width="75"
+                    Width="80"
                     Background="#FF2B2A3C"
                     CornerRadius="10">
 
                     <StackPanel>
                         <TextBlock Text="Speed:"
-                               Style="{StaticResource PropertyNameTheme}" FontSize="14"/>
-                        <TextBlock Text="{Binding }"
+                               Style="{StaticResource PropertyNameTheme}" FontSize="12"/>
+                        <TextBlock Text="{Binding Speed}"
                                Style="{StaticResource PropertyValueTheme}"/>
+                        <TextBlock Text="Mhz" Margin="0,-5,0,0"
+                               Style="{StaticResource PropertyValueTheme}" />
                     </StackPanel>
 
                 </Border>
                 <Border  
                     Padding="5"
-                    Width="75"
+                    Width="80"
                     Background="#FF2B2A3C"
                     CornerRadius="10">
 
                     <StackPanel>
                         <TextBlock Text="L2 Catche:"
-                               Style="{StaticResource PropertyNameTheme}" FontSize="14"/>
-                        <TextBlock Text="{Binding }"
+                               Style="{StaticResource PropertyNameTheme}" FontSize="12"/>
+                        <TextBlock Text="{Binding L2Catche}"
                                Style="{StaticResource PropertyValueTheme}"/>
                     </StackPanel>
 
@@ -134,14 +141,14 @@
 
                 <Border  
                     Padding="5"
-                    Width="75"
+                    Width="80"
                     Background="#FF2B2A3C"
                     CornerRadius="10">
 
                     <StackPanel>
                         <TextBlock Text="L3 Catche:"
-                               Style="{StaticResource PropertyNameTheme}" FontSize="14"/>
-                        <TextBlock Text="{Binding }"
+                               Style="{StaticResource PropertyNameTheme}" FontSize="12"/>
+                        <TextBlock Text="{Binding L3Catche}"
                                Style="{StaticResource PropertyValueTheme}"/>
                     </StackPanel>
 

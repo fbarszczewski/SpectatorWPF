@@ -14,33 +14,46 @@ namespace SpectatorWPF.ViewModel
         public RelayCommand ProcessorViewCommand { get; set; }
 
         private object _currentView;
+        private string testProperty;
+
         public object CurrentView
         {
             get { return _currentView; }
             set
             {
                 _currentView = value;
-                OnPropertyChanged();
+                OnPropertyChanged("CurrentView");
             }
         }
         public DeviceViewModel DeviceVM { get; set; }
         public ProcessorViewModel CpuVM { get; set; }
+        public string TestProperty 
+        {
+            get => testProperty; 
+            set
+            {
+                testProperty = value;
+                OnPropertyChanged("TestProperty");
+
+            }
+        }
+
 
         public MainViewModel()
         {
+            TestProperty = "test";
             DeviceVM = new DeviceViewModel();
             CpuVM = new ProcessorViewModel();
-            CurrentView = DeviceVM;
+            CurrentView = CpuVM;
 
             DeviceViewCommand = new RelayCommand(o =>
-            { 
-                CurrentView= DeviceVM;
+            {
+                CurrentView = DeviceVM;
+                TestProperty = "test2";
             });
 
-            ProcessorViewCommand = new RelayCommand(o =>
-            {
-                CurrentView = CpuVM;
-            });
+            ProcessorViewCommand = new RelayCommand(o => CurrentView = CpuVM);
+
         }
 
 
