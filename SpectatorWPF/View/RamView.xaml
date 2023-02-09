@@ -28,7 +28,7 @@
 
 
             <Border Grid.Row="0" Grid.Column="0"
-                                Margin="10"
+                                Margin="10,10,5,5"
                                 Padding="5"
                                 Background="#FF2B2A3C"
                                 CornerRadius="10">
@@ -126,7 +126,7 @@
             </Border>
 
             <Border Grid.Row="0" Grid.Column="1"
-                                Margin="10"
+                                Margin="5,10,10,5"
                                 Padding="5"
                                 Background="#FF2B2A3C"
                                 CornerRadius="10">
@@ -224,7 +224,7 @@
             </Border>
 
             <Border Grid.Row="1" Grid.Column="0"
-                                Margin="10"
+                                Margin="10,5,5,10"
                                 Padding="5"
                                 Background="#FF2B2A3C"
                                 CornerRadius="10">
@@ -322,7 +322,7 @@
             </Border>
             
             <Border Grid.Row="1" Grid.Column="1"
-                                Margin="10"
+                                Margin="5,5,10,10"
                                 Padding="5"
                                 Background="#FF2B2A3C"
                                 CornerRadius="10">
