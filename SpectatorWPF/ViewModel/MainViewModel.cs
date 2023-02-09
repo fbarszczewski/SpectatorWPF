@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Prism.Commands;
 using SpectatorWPF.Core;
 using SpectatorWPF.Model;
 
 namespace SpectatorWPF.ViewModel
 {
-    class MainViewModel : ObservableObject
+    class MainViewModel : ObservableObject,  ICloseWindow
     {
 
 
@@ -48,9 +49,20 @@ namespace SpectatorWPF.ViewModel
 
         }
 
+        private DelegateCommand _closeCommand;
+        public DelegateCommand CloseCommand => _closeCommand??=new DelegateCommand(CloseWindow);
 
+        public Action Close { get; set; }
 
+        private void CloseWindow()
+        {
+            Close?.Invoke();
+        }
 
+    }
 
+    interface ICloseWindow
+    {
+        Action Close { get; set; }
     }
 }
