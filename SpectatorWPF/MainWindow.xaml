@@ -69,7 +69,8 @@
                              Style="{StaticResource MenuButtonTheme}"
                              Command="{Binding RamViewCommand}"/>
 
-                <RadioButton Content="Close"
+                <RadioButton Content="Close program"
+                             Margin="0,40"
                              Style="{StaticResource MenuButtonTheme}"
                              Command="{Binding CloseCommand}"/>
 
