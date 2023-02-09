@@ -62,7 +62,8 @@
                              Command="{Binding ProcessorViewCommand}"/>
 
                 <RadioButton Content="Memory"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding RamViewCommand}"/>
 
 
 

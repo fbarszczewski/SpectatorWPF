@@ -8,7 +8,7 @@ using System.Windows.Input;
 
 namespace SpectatorWPF.Core
 {
-    public class RelayCommand
+    public class RelayCommand:ICommand
     {
         #region Fields
         readonly Action<object> _execute;
