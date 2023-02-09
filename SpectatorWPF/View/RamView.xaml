@@ -105,7 +105,7 @@
                             <StackPanel>
                                 <TextBlock Text="Speed:"
                                            Style="{StaticResource PropertyNameTheme}" FontSize="12"/>
-                                <TextBlock Text="{Binding Speed0}"
+                                <TextBlock Text="{Binding Speed0, Converter={StaticResource ToString}}"
                                            Style="{StaticResource PropertyValueTheme}"/>
                             </StackPanel>
                         </Border>
@@ -119,7 +119,7 @@
                             <StackPanel>
                                 <TextBlock Text="Voltage:"
                                            Style="{StaticResource PropertyNameTheme}" FontSize="12"/>
-                                <TextBlock Text="{Binding Voltage0}"
+                                <TextBlock Text="{Binding Voltage0, Converter={StaticResource ToString}}"
                                            Style="{StaticResource PropertyValueTheme}"/>
                             </StackPanel>
                         </Border>
@@ -189,7 +189,7 @@
                             <StackPanel>
                                 <TextBlock Text="Size:"
                                            Style="{StaticResource PropertyNameTheme}" FontSize="12"/>
-                                <TextBlock Text="{Binding Size1}"
+                                <TextBlock Text="{Binding Size1, Converter={StaticResource ToString}}"
                                            Style="{StaticResource PropertyValueTheme}"/>
                             </StackPanel>
                         </Border>
@@ -203,7 +203,7 @@
                             <StackPanel>
                                 <TextBlock Text="Speed:"
                                            Style="{StaticResource PropertyNameTheme}" FontSize="12"/>
-                                <TextBlock Text="{Binding Speed1}"
+                                <TextBlock Text="{Binding Speed1, Converter={StaticResource ToString}}"
                                            Style="{StaticResource PropertyValueTheme}"/>
                             </StackPanel>
                         </Border>
@@ -217,7 +217,7 @@
                             <StackPanel>
                                 <TextBlock Text="Voltage:"
                                            Style="{StaticResource PropertyNameTheme}" FontSize="12"/>
-                                <TextBlock Text="{Binding Voltage1}"
+                                <TextBlock Text="{Binding Voltage1, Converter={StaticResource ToString}}"
                                            Style="{StaticResource PropertyValueTheme}"/>
                             </StackPanel>
                         </Border>
@@ -287,7 +287,7 @@
                             <StackPanel>
                                 <TextBlock Text="Size:"
                                            Style="{StaticResource PropertyNameTheme}" FontSize="12"/>
-                                <TextBlock Text="{Binding Size2}"
+                                <TextBlock Text="{Binding Size2, Converter={StaticResource ToString}}"
                                            Style="{StaticResource PropertyValueTheme}"/>
                             </StackPanel>
                         </Border>
@@ -301,7 +301,7 @@
                             <StackPanel>
                                 <TextBlock Text="Speed:"
                                            Style="{StaticResource PropertyNameTheme}" FontSize="12"/>
-                                <TextBlock Text="{Binding Speed2}"
+                                <TextBlock Text="{Binding Speed2, Converter={StaticResource ToString}}"
                                            Style="{StaticResource PropertyValueTheme}"/>
                             </StackPanel>
                         </Border>
@@ -315,7 +315,7 @@
                             <StackPanel>
                                 <TextBlock Text="Voltage:"
                                            Style="{StaticResource PropertyNameTheme}" FontSize="12"/>
-                                <TextBlock Text="{Binding Voltage2}"
+                                <TextBlock Text="{Binding Voltage2, Converter={StaticResource ToString}}"
                                            Style="{StaticResource PropertyValueTheme}"/>
                             </StackPanel>
                         </Border>
@@ -385,7 +385,7 @@
                             <StackPanel>
                                 <TextBlock Text="Size:"
                                            Style="{StaticResource PropertyNameTheme}" FontSize="12"/>
-                                <TextBlock Text="{Binding Size3}"
+                                <TextBlock Text="{Binding Size3, Converter={StaticResource ToString}}"
                                            Style="{StaticResource PropertyValueTheme}"/>
                             </StackPanel>
                         </Border>
@@ -399,7 +399,7 @@
                             <StackPanel>
                                 <TextBlock Text="Speed:"
                                            Style="{StaticResource PropertyNameTheme}" FontSize="12"/>
-                                <TextBlock Text="{Binding Speed3}"
+                                <TextBlock Text="{Binding Speed3, Converter={StaticResource ToString}}"
                                            Style="{StaticResource PropertyValueTheme}"/>
                             </StackPanel>
                         </Border>
@@ -413,7 +413,7 @@
                             <StackPanel>
                                 <TextBlock Text="Voltage:"
                                            Style="{StaticResource PropertyNameTheme}" FontSize="12"/>
-                                <TextBlock Text="{Binding Voltage3}"
+                                <TextBlock Text="{Binding Voltage3, Converter={StaticResource ToString}}"
                                            Style="{StaticResource PropertyValueTheme}"/>
                             </StackPanel>
                         </Border>
