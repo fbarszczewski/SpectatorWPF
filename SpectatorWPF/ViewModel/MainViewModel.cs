@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using SpectatorWPF.Core;
 using SpectatorWPF.Model;
 
@@ -11,8 +12,6 @@ namespace SpectatorWPF.ViewModel
     class MainViewModel : ObservableObject
     {
 
-        public RelayCommand DeviceViewCommand { get; set; }
-        public RelayCommand ProcessorViewCommand { get; set; }
 
         private object _currentView;
         private string testProperty;
@@ -23,7 +22,7 @@ namespace SpectatorWPF.ViewModel
             set
             {
                 _currentView = value;
-                OnPropertyChanged("CurrentView");
+                OnPropertyChanged();
             }
         }
         public DeviceViewModel DeviceVM { get; set; }
@@ -36,12 +35,13 @@ namespace SpectatorWPF.ViewModel
             set
             {
                 testProperty = value;
-                OnPropertyChanged("TestProperty");
+                OnPropertyChanged();
 
             }
         }
 
-
+        //public RelayCommand DeviceViewCommand { get; set; }
+        //public RelayCommand ProcessorViewCommand { get; set; }
         public MainViewModel()
         {
             TestProperty = "test";
@@ -50,15 +50,31 @@ namespace SpectatorWPF.ViewModel
             RamVM = new RamViewModel();
             CurrentView = RamVM;
 
-            DeviceViewCommand = new RelayCommand(o =>
-            {
-                CurrentView = DeviceVM;
-                TestProperty = "test2";
-            });
+            //DeviceViewCommand = new RelayCommand(o =>
+            //{
+            //    CurrentView = DeviceVM;
+            //    TestProperty = "test2";
+            //});
 
-            ProcessorViewCommand = new RelayCommand(o => CurrentView = CpuVM);
+            //ProcessorViewCommand = new RelayCommand(o => CurrentView = CpuVM);
 
         }
+
+        //private ICommand deviceViewCommand;
+        //public ICommand DeviceViewCommand
+        //{
+        //    get
+        //    {
+        //        if (deviceViewCommand == null)
+        //        {
+        //            deviceViewCommand = new RelayCommand(argument =>
+        //            {
+        //                CurrentView = DeviceVM;
+        //            });
+        //        }
+        //        return deviceViewCommand;
+        //    }
+        //}
 
 
 
